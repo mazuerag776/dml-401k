@@ -2,8 +2,8 @@
 .venv/
 venv/
 
-# Raw data
-data/raw/
+# Datasets
+data/
 
 # Python-generated files
 __pycache__/

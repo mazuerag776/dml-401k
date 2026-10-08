@@ -26,6 +26,9 @@ data_dml_base = dml.DoubleMLData(data, y_col="net_tfa",
                                  d_cols="e401",
                                  x_cols=features_base)
 
+# Saving the data in processed folder
+data.to_csv("~/projects/dml-401k/data/processed/basic_data.csv")
+
 print(data_dml_base)
 
 # Setting up flexible model
@@ -61,6 +64,9 @@ for key, degree in poly_dict.items():
 model_data = pd.concat((data.copy()[['net_tfa', 'e401']], 
                         features.copy()),
                         axis=1, sort=False)
+
+# Saving the data in processed folder
+model_data.to_csv("~/projects/dml-401k/data/processed/flexible_data.csv")
 
 # Initialize DoubleMLData backend for model with flexible features
 data_dml_flex = dml.DoubleMLData(model_data,
